@@ -99,6 +99,10 @@ class FormHelper
         }
 
         switch ($property->type) {
+            case 'boolean':
+                return $options + [
+                        'false_values' => [null, false],
+                    ];
             case 'array':
                 return $options + [
                     'allow_add' => true,
